@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+
+<!-- Mirrored from xfazi-m.github.io/portfolio/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jan 2026 21:26:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | KACZKA_1_</title>
+    <meta name="description" content="Profesjonalne strony WWW">
+     <script src="https://cdn.tailwindcss.com/"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 
+    ========================================================================================================================
+    AUTOR PROJEKTU I WŁAŚCICIEL KODU:
+    
+██╗  ██╗  █████╗  ██████╗███████╗██╗  ██╗ █████╗ 
+ ██║ ██╔╝ ██╔══██╗██╔════╝╚══███╔╝██║ ██╔╝██╔══██╗
+ █████╔╝  ███████║██║       ███╔╝ █████╔╝ ███████║
+ ██╔═██╗  ██╔══██║██║      ███╔╝  ██╔═██╗ ██╔══██║
+ ██║  ██╗ ██║  ██║╚██████╗███████╗██║  ██╗██║  ██║
+ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝
+
+    ------------------------------------------------------------------------------------------------------------------------
+    UWAGA: NINIEJSZY KOD ŹRÓDŁOWY ORAZ WARSTWA WIZUALNA PODLEGAJĄ OCHRONIE PRAWNEJ.
+    NA PODSTAWIE USTAWY Z DNIA 4 LUTEGO 1994 R. O PRAWIE AUTORSKIM I PRAWACH POKREWNYCH (DZ. U. Z 2021 R. POZ. 1062 Z PÓŹN. ZM.).
+    KOPIOWANIE, ROZPOWSZECHNIANIE LUB MODYFIKACJA BEZ PISEMNEJ ZGODY AUTORA (KACZKA_1_) JEST ZABRONIONE.
+    ========================================================================================================================
+    -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        light: '#FAFAFA',
+                        grey: '#888888',
+                        discord: '#5865F2',
+                        discordHover: '#4752C4'
+                    },
+                    animation: {
+                        'scroll': 'scroll 30s linear infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+ 
+        body {
+            background-color: #ffffff;
+            color: #0a0a0a;
+            overflow-x: hidden; 
+        }
+
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); 
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAFAFA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 5px;
+            border: 2px solid #FAFAFA;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #000;
+        }
+
+    
+        img {
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        img::after { 
+            content: "Brak pliku: " attr(src);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f3f4f6;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 500;
+        }
+
+     
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .discord-glow {
+            box-shadow: 0 0 40px -10px rgba(88, 101, 242, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+        .discord-glow:hover {
+            box-shadow: 0 0 60px -10px rgba(88, 101, 242, 0.6);
+        }
+        
+        .kw-alert { 
+            margin-top: 1rem; 
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+   <div class="fixed inset-0 z-[9999] flex flex-col items-center justify-center p-6 text-center mobile-bg text-white lg:hidden h-screen w-screen overflow-hidden">
+        
+       
+        <div class="absolute top-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+    
+        <div class="relative z-10 max-w-md mx-auto space-y-8 animate-fade-in-up">
+            
+            <div class="animate-float">
+                <div class="relative inline-block">
+                    <i class="fa-solid fa-desktop text-6xl text-blue-400 drop-shadow-lg"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h1 class="text-3xl font-serif font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-black-200 to-black-200">
+                    Wersja Desktopowa
+                </h1>
+                
+                <p class="text-gray-300 font-light leading-relaxed">
+                    Ta strona została zaprojektowana z myślą o dużych ekranach. 
+                    Aby zobaczyć moje portfolio w pełnej okazałości, proszę skorzystaj z komputera.
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="hidden lg:block min-h-screen">
+ 
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24"> 
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <span class="text-2xl font-extrabold tracking-tighter group-hover:opacity-80 transition-opacity">
+                        KACZKA_1_<span class="text-gray-400 font-light"> Portfolio</span>
+                    </span>
+                </div>
+                
+              
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-1">
+                        <a href="#home" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">Strona Główna</a>
+                        <a href="#about" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">O mnie</a>
+                        <a href="Discord.html" class="px-4 py-2 text-sm font-bold text-[#5865F2] bg-[#5865F2]/5 hover:bg-[#5865F2]/10 transition-colors rounded-full">Discord</a>
+                        <a href="#portfolio" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors rounded-full hover:bg-gray-50">Projekty</a>
+                    </div>
+                </div>
+
+               
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-gray-100 focus:outline-none">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+     
+        <div class="md:hidden hidden bg-white border-b border-gray-100 absolute w-full" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-2 shadow-xl">
+                <a href="#home" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">Strona Główna</a>
+                <a href="#about" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">O mnie</a>
+                <a href="Discord.html" class="block px-4 py-3 rounded-xl text-base font-bold text-[#5865F2] bg-[#5865F2]/5" onclick="toggleMenu()">Discord</a>
+                <a href="#portfolio" class="block px-4 py-3 rounded-xl text-base font-medium hover:bg-gray-50" onclick="toggleMenu()">Projekty</a>
+            </div>
+        </div>
+    </nav>
+
+
+<section class="custom-hero-component">
+    <style>
+        .custom-hero-component {
+            width: 100%;
+            min-height: 650px; 
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%; 
+            position: relative;
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow: hidden;
+            
+            margin-top: 100px; 
+            margin-bottom: 0px;
+        }
+
+      
+        .custom-hero-component .hero-content-left {
+            flex: 1;
+            max-width: 650px;
+            z-index: 2;
+            padding-right: 40px;
+        }
+
+        .custom-hero-component .hero-title-gradient {
+            font-size: clamp(2.8rem, 6vw, 4.5rem); 
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .custom-hero-component .hero-description {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 45px;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        
+        .custom-hero-component .hero-content-right {
+            flex: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            perspective: 1200px; 
+        }
+
+        .custom-hero-component .promo-image-box-3d {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            background: #f8fafc;
+            border-radius: 60px;
+            padding: 15px;
+            
+            transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg);
+            transform-style: preserve-3d;
+            box-shadow: -20px 40px 80px rgba(0,0,0,0.1);
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: hero3DFloat 8s ease-in-out infinite;
+        }
+
+        .custom-hero-component .promo-image-box-3d:hover {
+       
+            transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.03);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.15);
+        }
+
+        .custom-hero-component .inner-img-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 45px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .custom-hero-component .inner-img-frame::before {
+            content: 'Prezentacja Projektu';
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .custom-hero-component .inner-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.8s ease;
+        }
+
+        
+        .custom-hero-component .hero-btn {
+            display: inline-block;
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 18px 45px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(30, 41, 59, 0.2);
+        }
+
+        .custom-hero-component .hero-btn:hover {
+            background-color: #0f172a;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(30, 41, 59, 0.3);
+        }
+
+        
+        @keyframes hero3DFloat {
+            0%, 100% { transform: rotateY(-15deg) rotateX(10deg) rotateZ(2deg) translateY(0px); }
+            50% { transform: rotateY(-10deg) rotateX(15deg) rotateZ(3deg) translateY(-20px); }
+        }
+
+       
+        @media (max-width: 1024px) {
+            .custom-hero-component .promo-image-box-3d {
+                height: 350px;
+                transform: rotateY(-10deg) rotateX(5deg);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .custom-hero-component {
+                flex-direction: column;
+                text-align: center;
+                padding: 100px 20px;
+                height: auto;
+            }
+            .custom-hero-component .hero-content-left {
+                margin-bottom: 80px;
+                padding-right: 0;
+            }
+            .custom-hero-component .promo-image-box-3d {
+                transform: none !important;
+                height: 300px;
+                animation: none;
+            }
+        }
+    </style>
+
+    <div class="hero-content-left">
+        <h1 class="hero-title-gradient">Stwórz ze mną<br>swoją wywarzoną stronę</h1>
+        <p class="hero-description">
+        Ty dostarczasz pomysł i wizję, a ja zajmuję się resztą. Przekuję Twoją koncepcję w czysty kod, skonfiguruję domenę i zadbam o każdy techniczny detal, by Twój projekt ożył w sieci.
+        </p>
+        <a href="Discord.html" class="hero-btn">Kontakt</a>
+    </div>
+
+    <div class="hero-content-right">
+        <div class="promo-image-box-3d">
+            <div class="inner-img-frame">
+                <img src="images/obraz_2026-02-17_182227872-ezgif.com-resize.png" alt="" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-black rounded-2xl transform translate-x-3 translate-y-3 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                        <img src="images/424.png" 
+                             alt="Moje zdjęcie" 
+                             class="relative w-full aspect-[4/5] object-cover rounded-2xl shadow-lg bg-white grayscale group-hover:grayscale-0 transition-all duration-500"
+                             onerror="this.src='https://i.imgur.com/By4Dd48.png';">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal delay-100">
+                    <h2 class="text-4xl font-bold mb-6">Kod to tylko narzędzie.<br>Ja dostarczam rozwiązania.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dobra strona to coś więcej niż ładny wygląd. To szybkość działania, intuicyjna obsługa i techniczna niezawodność. Rozwiązuję problemy z wydajnością, dopasowuję funkcje do Twoich celów i dbam o to, by technologia pracowała na Twój sukces, a nie była przeszkodą.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 border-t border-gray-200 pt-8">
+                        <div>
+                            <h3 class="text-5xl font-extrabold text-black mb-1">1+</h3>
+                            <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Lata doświadczenia</p>
+                        </div>
+                        <div>
+                            <h3 class="text-5xl font-extrabold text-black mb-1">100%</h3>
+                            <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Profesjonalizmu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="https://cdn.tailwindcss.com/"></script>
+
+<style>
+  
+    .partner-card-component {
+        transition: all 1000ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        will-change: transform, opacity;
+    }
+
+    .partner-logo-gray {
+        filter: grayscale(100%);
+        opacity: 0.2;
+        transition: all 0.4s ease;
+    }
+
+   
+    .partner-card-component.active .partner-logo-gray,
+    .partner-card-component:hover .partner-logo-gray {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+</style>
+
+<section id="portfolio-trusted-section" class="w-full bg-transparent py-12 overflow-hidden font-sans opacity-0 transition-opacity duration-1000">
+    <div class="max-w-5xl mx-auto px-4">
+        
+       
+        <div class="flex flex-col items-center justify-center mb-10">
+            <h2 class="text-xl md:text-2xl font-black tracking-[0.3em] uppercase text-black text-center">
+                Zaufali mi
+            </h2>
+            <div class="h-1 w-12 bg-black mt-2 opacity-10"></div>
+        </div>
+
+       
+        <div id="logos-carousel-wrapper" class="relative h-[120px] flex items-center justify-center w-full select-none">
+           
+        </div>
+    </div>
+</section>
+
+<script>
+    (function() {
+        
+        const LOGO_DATA = [
+            { id: 1, img: "images/LogoSzefikimc.pl", link: "#" },
+            { id: 2, img: "images/LogoSzefikimc.pl.png", link: "#" },
+            { id: 3, img: "images/LogoSzefikimc.pl.png", link: "#" },
+            { id: 4, img: "images/LogoSzefikimc.pl.png", link: "#" },
+            { id: 5, img: "images/LogoSzefikimc.pl.png", link: "#" },
+            { id: 6, img: "images/LogoSzefikimc.pl.png", link: "#" }
+        ];
+
+        let currentIdx = 0;
+        let isHovered = false;
+        const wrapper = document.getElementById('logos-carousel-wrapper');
+        const mainSec = document.getElementById('portfolio-trusted-section');
+
+        function buildLogos() {
+            wrapper.innerHTML = '';
+            LOGO_DATA.forEach((item, i) => {
+                const card = document.createElement('a');
+                card.href = item.link;
+                card.target = "_blank";
+                card.className = "partner-card-component absolute top-1/2 left-1/2 flex items-center justify-center w-24 h-24 bg-white rounded-2xl border border-gray-100 group shadow-sm";
+                card.setAttribute('data-idx', i);
+                
+                const content = document.createElement('div');
+                content.className = "w-full h-full p-5 flex items-center justify-center bg-white rounded-2xl overflow-hidden";
+                
+                const img = document.createElement('img');
+                img.src = item.img;
+                img.alt = "Partner";
+                img.className = "partner-logo-gray w-full h-full object-contain transition-transform duration-500 group-hover:scale-105";
+                
+               
+                img.onerror = function() {
+                    this.parentElement.innerHTML = '<svg class="w-6 h-6 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>';
+                };
+
+                content.appendChild(img);
+                card.appendChild(content);
+                wrapper.appendChild(card);
+            });
+
+            refreshPositions();
+            setTimeout(() => mainSec.style.opacity = '1', 200);
+        }
+
+        function refreshPositions() {
+            const allCards = wrapper.querySelectorAll('.partner-card-component');
+            const total = LOGO_DATA.length;
+
+            allCards.forEach((card, i) => {
+                let distance = (i - currentIdx + total + total / 2) % total - total / 2;
+                
+                if (Math.abs(distance) > 2.5) {
+                    card.style.display = 'none';
+                    return;
+                }
+                
+                card.style.display = 'flex';
+                const centered = distance === 0;
+                const offset = distance * 160;
+                const size = centered ? 1.2 : (0.85 - Math.abs(distance) * 0.1);
+                const alpha = centered ? 1 : (0.35 - Math.abs(distance) * 0.1);
+                const layer = Math.round(10 - Math.abs(distance));
+
+                card.style.transform = `translate(-50%, -50%) translateX(${offset}px) scale(${size})`;
+                card.style.opacity = Math.max(0, alpha);
+                card.style.zIndex = layer;
+
+                if (centered) {
+                    card.classList.add('active', 'shadow-xl', 'border-gray-200');
+                } else {
+                    card.classList.remove('active', 'shadow-xl', 'border-gray-200');
+                }
+            });
+        }
+
+        setInterval(() => {
+            if (!isHovered) {
+                currentIdx = (currentIdx + 1) % LOGO_DATA.length;
+                refreshPositions();
+            }
+        }, 2000);
+
+        wrapper.addEventListener('mouseenter', () => isHovered = true);
+        wrapper.addEventListener('mouseleave', () => isHovered = false);
+
+     
+        if (document.readyState === 'complete') buildLogos();
+        else window.addEventListener('load', buildLogos);
+    })();
+</script>
+   
+    <section id="discord" class="py-32 bg-[#0a0a0a] text-white relative overflow-hidden">
+        
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#5865F2] rounded-full mix-blend-screen filter blur-[120px] opacity-10 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                
+                
+                <div class="lg:w-1/2 reveal">
+                    <div class="inline-flex items-center gap-2 mb-6">
+                        <i data-lucide="server" class="text-[#5865F2]"></i>
+                        <span class="text-[#5865F2] font-bold tracking-wider uppercase text-sm">Serwer Discord</span>
+                    </div>
+                    
+                    <h2 class="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                        Współpracuję z <br>
+                        <span class="text-[#5865F2]">SZEFIKIMC.PL</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed max-w-xl">
+                        To właśnie tam przyjmuję zlecenia, pomagam w konfiguracji botów i dzielę się wiedzą. Szukasz dedykowanego bota lub strony? Wejdź na serwer i otwórz ticket w strefie zamówień.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="Discord.html" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(88,101,242,0.4)] hover:shadow-[0_0_30px_rgba(88,101,242,0.6)]">
+                            <i data-lucide="ticket"></i>
+                            Dołącz na serwery
+                        </a>
+                    </div>
+                </div>
+
+            
+                <div class="lg:w-1/2 w-full reveal delay-200 flex justify-center lg:justify-end">
+                
+                    <div class="relative w-full max-w-md group perspective-1000">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-[#5865F2] to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
+                        
+                        <div class="relative bg-[#1a1b1e] border border-[#2d2f36] rounded-2xl p-6 shadow-2xl discord-glow transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-[1.02]">
+                            
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#5865F2] to-[#404EED] flex items-center justify-center shadow-lg">
+                                        <i data-lucide="bot" class="w-8 h-8 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-xl text-white">System Bot v2.0</h3>
+                                        <span class="text-xs text-gray-400 bg-gray-800 px-2 py-0.5 rounded uppercase tracking-wide">Main Core</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    <span class="text-green-500 text-xs font-mono font-bold">ONLINE</span>
+                                </div>
+                            </div>
+
+                           
+                            <div class="grid grid-cols-2 gap-3 mb-6">
+                                <div class="bg-[#232428] p-4 rounded-xl border border-gray-800 hover:border-[#5865F2] transition-colors">
+                                    <div class="text-gray-500 text-xs uppercase mb-1">Serwery</div>
+                                    <div class="text-white font-mono text-xl">15+</div>
+                                </div>
+                                <div class="bg-[#232428] p-4 rounded-xl border border-gray-800 hover:border-[#5865F2] transition-colors">
+                                    <div class="text-gray-500 text-xs uppercase mb-1">Użytkownicy</div>
+                                    <div class="text-white font-mono text-xl">12.5k</div>
+                                </div>
+                            </div>
+
+                          
+                            <div class="bg-[#0f1012] rounded-lg p-4 font-mono text-xs text-gray-400 border border-gray-800 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#5865F2]/5 to-transparent animate-pulse pointer-events-none"></div>
+                                <p><span class="text-purple-400">const</span> <span class="text-blue-400">order</span> = <span class="text-yellow-400">new</span> Ticket();</p>
+                                <p class="pl-4"><span class="text-blue-400">order</span>.<span class="text-yellow-300">create</span>({</p>
+                                <p class="pl-8">user: <span class="text-green-400">'Client'</span>,</p>
+                                <p class="pl-8">service: <span class="text-green-400">'FullStack'</span>,</p>
+                                <p class="pl-8">status: <span class="text-red-400 font-bold">'PRIORITY_HIGH'</span></p>
+                                <p class="pl-4">});</p>
+                            </div>
+
+                            <div class="mt-6 text-center text-xs text-gray-600 uppercase tracking-widest">
+                                Developed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-16 reveal">
+                <span class="text-gray-500 font-bold tracking-widest uppercase text-xs">Portfolio</span>
+                <h2 class="text-4xl font-bold mt-2 mb-4">Wybrane Realizacje</h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-16">
+           
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                   
+                    <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-200 h-[400px]">
+                        <img src="images/obraz_2026-02-17_182227872-ezgif.com-resize.png" alt="Bot Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        onerror="this.src='https://placehold.co/600x600/111/FFF?text=Bot+Dashboard';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <span class="text-[#5865F2] font-bold text-xs uppercase tracking-wider mb-2 block">Sklep Serwerowy</span>
+                                <h3 class="text-2xl font-bold text-white mb-2">Sklep z bramką płatniczą</h3>
+                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                    Sklep z bramką płatniczą Stripe i botem DC z powiadomieniami
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="group rounded-3xl overflow-hidden relative shadow-xl reveal delay-300 h-[400px]">
+                        <img src="images/Zrzutekranu2026-02-17183221-ezgif.com-resize.png" alt="Grafika" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        onerror="this.src='https://placehold.co/600x600/111/FFF?text=Branding+Pack';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <span class="text-white font-bold text-xs uppercase tracking-wider mb-2 block">Portfolio</span>
+                                <h3 class="text-2xl font-bold text-white mb-2">Portfolio</h3>
+                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                    Rozbudowane portfolio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="contact-component" class="w-full max-w-6xl mx-auto my-10 bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden" style="font-family: 'Outfit', sans-serif;">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+    <style>
+        #contact-component .input-style {
+            transition: all 0.2s ease;
+        }
+        #contact-component .input-style:focus {
+            background-color: white;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+        #contact-component textarea::-webkit-scrollbar { width: 4px; }
+        #contact-component textarea::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        
+        @keyframes fade-up-simple {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-component {
+            animation: fade-up-simple 0.6s ease-out forwards;
+        }
+    </style>
+
+    <div class="flex flex-col lg:flex-row animate-component">
+        
+       
+        <div class="lg:w-[35%] bg-slate-900 p-8 md:p-10 flex flex-col justify-between text-white relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/10 to-transparent pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold mb-3 tracking-tight">Kontakt</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                    Masz projekt? Napisz do mnie tutaj lub złap mnie bezpośrednio na Discordzie.
+                </p>
+
+              
+                <div class="bg-white/5 border border-white/10 p-5 rounded-3xl backdrop-blur-sm group transition-all hover:bg-white/10">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-[#5865F2] rounded-2xl flex items-center justify-center text-white shadow-lg shadow-[#5865F2]/20">
+                            <svg width="24" height="18" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.0156 1.83594C22.1875 0.984375 20.25 0.375 18.2344 0C17.9844 0.453125 17.7031 1.0625 17.5 1.54688C15.3281 1.21875 13.1719 1.21875 11.0156 1.54688C10.8125 1.0625 10.5312 0.453125 10.2656 0C8.25 0.375 6.3125 0.984375 4.48438 1.83594C0.8125 7.375 -0.1875 12.7812 0.3125 18.0625C2.71875 19.8594 5.04688 20.9375 7.32812 21C7.89062 20.2188 8.39062 19.3906 8.8125 18.5156C7.98438 18.2031 7.20312 17.8125 6.45312 17.3594C6.65625 17.2031 6.84375 17.0312 7.03125 16.8594C11.6406 19.0156 16.875 19.0156 21.4375 16.8594C21.625 17.0312 21.8281 17.2031 22.0312 17.3594C21.2812 17.8125 20.5 18.2031 19.6719 18.5156C20.0938 19.3906 20.5938 20.2188 21.1562 21C23.4531 20.9375 25.7656 19.8594 28.1719 18.0625C28.7812 11.9062 27.1562 6.54688 24.0156 1.83594ZM9.375 14.6094C8.01562 14.6094 6.89062 13.3438 6.89062 11.7812C6.89062 10.2188 7.98438 8.96875 9.375 8.96875C10.7812 8.96875 11.8906 10.2344 11.875 11.7812C11.875 13.3438 10.7812 14.6094 9.375 14.6094ZM19.1406 14.6094C17.7812 14.6094 16.6562 13.3438 16.6562 11.7812C16.6562 10.2188 17.7656 8.96875 19.1406 8.96875C20.5312 8.96875 21.6406 10.2344 21.625 11.7812C21.625 13.3438 20.5312 14.6094 19.1406 14.6094Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span id="discord-nick" class="block text-lg font-bold text-white">kaczka_1_</span>
+                        </div>
+                    </div>
+                    
+                    <button type="button" onclick="copyDiscordNick()" id="copy-btn-comp" class="w-full py-2.5 rounded-xl bg-white text-slate-900 text-xs font-bold transition-all flex items-center justify-center gap-2 active:scale-95 hover:bg-indigo-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <span id="copy-text-comp">Kopiuj</span>
+                    </button>
+                </div>
+            </div>
+
+           
+            <div id="toast-comp" class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-bold px-4 py-1 rounded-full opacity-0 transition-all pointer-events-none">
+                SKOPIOWANO!
+            </div>
+        </div>
+
+        
+        <div class="lg:w-[65%] p-8 md:p-10 bg-white">
+            <form action="https://kwes.io/api/foreign/forms/kndpOyviDl5gXHIRsiZu" method="POST" class="kwes-form grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <div class="md:col-span-1 space-y-1.5">
+                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Twoje Imię</label>
+                    <input type="text" name="name" placeholder="Imię" required
+                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300">
+                </div>
+
+                <div class="md:col-span-1 space-y-1.5">
+                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Email</label>
+                    <input type="email" name="email" placeholder="Email" required
+                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300">
+                </div>
+
+                <div class="md:col-span-2 space-y-1.5">
+                    <label class="text-xs font-bold text-slate-500 uppercase tracking-wide ml-1">Wiadomość</label>
+                    <textarea name="message" rows="3" placeholder="W czym mogę pomóc?" required
+                        class="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-2xl px-5 py-3.5 outline-none input-style placeholder-slate-300"></textarea>
+                </div>
+
+                <div class="md:col-span-2 pt-2">
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-100 transition-all transform hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2">
+                        <span>Wyślij wiadomość</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   
+    <script src="../../kwesforms.com/v2/kwes-forms.html" defer></script>
+
+    <script>
+        function copyDiscordNick() {
+            const nick = document.getElementById('discord-nick').innerText;
+            const btnText = document.getElementById('copy-text-comp');
+            const toast = document.getElementById('toast-comp');
+
+            const el = document.createElement('textarea');
+            el.value = nick;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100', '-translate-y-1');
+            
+            const originalText = btnText.innerText;
+            btnText.innerText = "Skopiowano!";
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                toast.classList.remove('opacity-100', '-translate-y-1');
+                btnText.innerText = originalText;
+            }, 2000);
+        }
+    </script>
+</section>
+
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xl font-bold tracking-tighter">
+                KACZKA_1_<span class="text-gray-400"> Portfolio</span>
+            </div>
+            
+            <div class="text-sm text-gray-500 font-medium">
+                &copy; 2026 KACZKA_1_ <span class="text-gray-300 mx-2"></span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        
+        lucide.createIcons();
+
+       
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                // Mała animacja otwarcia
+                menu.style.opacity = "0";
+                menu.style.transform = "translateY(-10px)";
+                setTimeout(() => {
+                    menu.style.transition = "all 0.3s ease";
+                    menu.style.opacity = "1";
+                    menu.style.transform = "translateY(0)";
+                }, 10);
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+
+        
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); 
+    </script>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Blokuje przeładowanie strony
+
+    const webhookURL = "https://discord.com/api/webhooks/1460036572866154516/yXzRtTg_GWPPqjKhRGn5Ifd-oQkc-THVz7agHQ-CsdAtnbPurc0dzD5a8uSYDmh8r32X";
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+
+    // Pobieranie danych z pól
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Zmiana wyglądu przycisku na czas wysyłania
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Wysyłanie...";
+
+    const discordPayload = {
+        username: "Nowa wiadomość z Portfolio",
+        avatar_url: "https://i.imgur.com/4M34hi2.png", // Ikona kaczki lub logo
+        embeds: [{
+            title: "📬 Nowe zapytanie od klienta",
+            color: 6502894, // Kolor indygo (jak Twój przycisk)
+            fields: [
+                { name: "👤 Imię", value: name, inline: true },
+                { name: "📧 Email", value: email, inline: true },
+                { name: "💬 Wiadomość", value: message }
+            ],
+            footer: { text: "Wysłano z Twojej strony www" },
+            timestamp: new Date()
+        }]
+    };
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(discordPayload)
+    })
+    .then(() => {
+        submitBtn.innerHTML = "Wysłano pomyślnie! ✅";
+        submitBtn.classList.replace('bg-indigo-600', 'bg-green-500');
+        this.reset(); // Czyści formularz
+        
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.classList.replace('bg-green-500', 'bg-indigo-600');
+        }, 3000);
+    })
+    .catch(err => {
+        console.error('Błąd:', err);
+        alert('Wystąpił błąd podczas wysyłania. Spróbuj ponownie.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+    });
+});
+</script>
+
+</body>
+
+<!-- Mirrored from xfazi-m.github.io/portfolio/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jan 2026 21:26:24 GMT -->
+</html>
